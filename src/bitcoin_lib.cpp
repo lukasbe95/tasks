@@ -1,20 +1,28 @@
 #include "bitcoin_lib.h"
 #include <iostream>
+#include <cstdlib>
+#include <sstream>
+
+using namespace std;
 
 Bitcoin::Bitcoin()
 {
-  std::cout<<"Constructor runs"<<std::endl;
+  cout<<"Constructor runs"<<endl;
 }
 Bitcoin::~Bitcoin()
 {
-  std::cout<<"Destructor runs"<<std::endl;
+  cout<<"Destructor runs"<<endl;
 }
 void Bitcoin::initializeAddress()
 {
-  for (char x : address) {
-    x = '0';
+  srand(static_cast <unsigned int> (time(0)));
+  address = "0";
+  for (int i=1;i<21;i++) {
+    int temp = rand()%t.length();
+    address += t[temp];
   }
-  for (char a : address) {
-    std::cout<<a;
-  }
+  size_t hashResult = std::hash<string>{}(address);
+  stringstream ss;
+  ss << hashResult;
+  address += ss.str().substr(0,4);  
 }
