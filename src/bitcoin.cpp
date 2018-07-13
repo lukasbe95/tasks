@@ -7,6 +7,7 @@ using namespace std;
 int main(int argc, char const *argv[])
 {
   Bitcoin b;
-  b.initializeAddress();
+  b.createAddress();
+  b.printAddress();
   return 0;
 }

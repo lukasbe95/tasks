@@ -13,7 +13,7 @@ Bitcoin::~Bitcoin()
 {
   cout<<"Destructor runs"<<endl;
 }
-void Bitcoin::initializeAddress()
+void Bitcoin::createAddress()
 {
   srand(static_cast <unsigned int> (time(0)));
   address = "0";
@@ -24,5 +24,9 @@ void Bitcoin::initializeAddress()
   size_t hashResult = std::hash<string>{}(address);
   stringstream ss;
   ss << hashResult;
-  address += ss.str().substr(0,4);  
+  address += ss.str().substr(0,4);
+}
+void Bitcoin::printAddress()
+{
+  cout<<"Bitcoin address: "+address<<endl;
 }

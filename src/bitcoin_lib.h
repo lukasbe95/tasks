@@ -6,10 +6,11 @@ class Bitcoin
 {
 private:
   std::string address;
-  std::string t = "01234567890abcdefghijklmnoprstuxwvABCDEFGHIJKLMNOPRSTUWXV";
+  std::string t = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz";
 public:
   Bitcoin ();
-  void initializeAddress();
+  void createAddress();
+  void printAddress();
   ~Bitcoin ();
 };
 #endif
