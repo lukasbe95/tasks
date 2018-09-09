@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-import docx2txt
 import os
 import re
 import argparse
